@@ -1,8 +1,9 @@
 package edu.badpals.quarkus;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
+import java.util.Collections;
 
 import edu.badpals.quarkus.dominio.*;
 import edu.badpals.quarkus.repository.*;
@@ -64,5 +65,24 @@ public class ServiceOlli {
         }
 
         return orden;
+    }
+
+    @Transactional
+    public List<Orden> comandaMultiple(String usur_nom, List<String> productos){
+        Optional<Usuaria> user = usuariaRepo.findByIdOptional(usur_nom);
+        if(user.isEmpty()){
+            return Collections.emptyList();
+        }
+
+        List<Orden> ordenes = new ArrayList<Orden>();
+
+        Orden orden = null;
+        for(String producto: productos){
+            orden = this.comanda(user.get().getNombre(), producto);
+            if (orden != null){
+                ordenes.add(orden);
+            }
+        }
+        return ordenes;
     }
 }
