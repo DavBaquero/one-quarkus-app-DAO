@@ -119,7 +119,7 @@ public class ServiceTest {
 		Assertions.assertThat(item.getNombre()).isEqualTo("Elixir of the Mongoose");
 		Assertions.assertThat(item.getQuality()).isEqualTo(7);
 	}
-    /* 
+
     @Test
 	public void test_carga_item_no_existe() {
         Assertions.assertThat(servicio).isNotNull();
