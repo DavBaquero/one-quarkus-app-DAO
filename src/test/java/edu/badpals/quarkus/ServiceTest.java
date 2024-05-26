@@ -252,7 +252,7 @@ public class ServiceTest {
 	 * en la base de datos.
 	 * 
 	 * No se ordenan items que no existan en la base de datos.
-	 *//*
+	 */
 
 	@Test
 	@Transactional
@@ -276,7 +276,7 @@ public class ServiceTest {
 		orden = em.find(Orden.class, pedidos.get(0).getId());
 		em.remove(orden);
 	}
-
+	/*
 	// No se permiten ordenes si el usuario no existe en la base de datos
 	@Test
 	@Transactional
