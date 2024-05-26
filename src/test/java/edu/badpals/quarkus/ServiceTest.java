@@ -147,7 +147,7 @@ public class ServiceTest {
 		// Assertions.assertThat(ordenes).allMatch(orden -> orden.getUser().getNombre().equalsIgnoreCase("Hermione"));
 		// Assertions.assertThat(ordenes).allMatch(orden -> orden.getItem().getNombre().equalsIgnoreCase("+5 Dexterity Vest"));
 	}
-    /*
+  
     @Test
 	public void test_carga_orden_no_existe() {
         Assertions.assertThat(servicio).isNotNull();
