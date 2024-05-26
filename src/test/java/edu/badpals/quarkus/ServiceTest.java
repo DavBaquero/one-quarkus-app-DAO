@@ -276,7 +276,7 @@ public class ServiceTest {
 		orden = em.find(Orden.class, pedidos.get(0).getId());
 		em.remove(orden);
 	}
-	/*
+	
 	// No se permiten ordenes si el usuario no existe en la base de datos
 	@Test
 	@Transactional
@@ -293,5 +293,5 @@ public class ServiceTest {
 		Assertions.assertThat(servicio).isNotNull();
 		List<Orden> ordenes = servicio.comandaMultiple("Hermione", Arrays.asList("Guardapelo Salazar", "Reliquias de la Muerte"));
 		Assertions.assertThat(ordenes).isEmpty();
-	} */
+	} 
 }
