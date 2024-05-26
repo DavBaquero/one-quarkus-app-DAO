@@ -28,6 +28,10 @@ public class ServiceOlli {
         return this.cargaUsuaria(user.getNombre());
     }
 
+    public void deleteUsuaria(String user){
+        usuariaRepo.deleteById(user);
+    }
+
     public Item cargaItem(String nombre){
         Optional<Item> item = itemRepo.findByIdOptional(nombre);
         return item.isPresent() ? item.get() : new Item();
