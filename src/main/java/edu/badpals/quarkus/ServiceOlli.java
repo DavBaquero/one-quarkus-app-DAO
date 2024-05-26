@@ -8,6 +8,7 @@ import edu.badpals.quarkus.dominio.*;
 import edu.badpals.quarkus.repository.*;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 
 @ApplicationScoped
 public class ServiceOlli {
@@ -33,7 +34,7 @@ public class ServiceOlli {
         return this.cargaUsuaria(user.getNombre());
     }
 
-    public void deleteUsuaria(String user){
+    public void Usuaria(String user){
         usuariaRepo.deleteById(user);
     }
 
@@ -48,5 +49,20 @@ public class ServiceOlli {
 
     public List<Orden> ordenes(){
         return ordenRepo.listAll();
+    }
+
+    @Transactional
+    public Orden comanda(String nom_usu, String item_nom){
+        Orden orden = null;
+        Optional<Usuaria> user = usuariaRepo.findByIdOptional(nom_usu);
+        Optional<Item> item = itemRepo.findByIdOptional(item_nom);
+
+        if(user.isPresent() && item.isPresent() 
+            && user.get().getDestreza() >= item.get().getQuality()){
+            orden = new Orden(user.get(), item.get());
+            ordenRepo.persist(orden);
+        }
+
+        return orden;
     }
 }
