@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import edu.badpals.quarkus.*;
+import edu.badpals.quarkus.dominio.*;
 
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
@@ -33,7 +33,7 @@ public class ServiceTest {
 	/**
 	 * Completa la definicion y el mapping
 	 * de la clase Item a la tabla t_items
-	 *//*
+	 */
     @Test
     public void test_mapping_normalItem() {
         Item elixir = em.find(Item.class, "Elixir of the Mongoose");
