@@ -191,7 +191,7 @@ public class ServiceTest {
      * Implementa el metodo comanda del servicio
 	 * para que NO permita generar pedidos de productos
 	 * si no existe la usuaria en la base de datos.
-	 *//* 
+	 */
 	@Test
 	public void test_comanda_no_user() {
 		Assertions.assertThat(servicio).isNotNull();
