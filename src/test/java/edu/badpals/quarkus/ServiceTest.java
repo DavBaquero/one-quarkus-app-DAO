@@ -94,7 +94,7 @@ public class ServiceTest {
 		Assertions.assertThat(elfo.getNombre()).isEqualTo("Doobey");
         Assertions.assertThat(elfo.getDestreza()).isEqualTo(15);
 	}
-/*
+
     @Test
 	public void test_carga_usuaria_no_existe() {
 		Assertions.assertThat(servicio).isNotNull();
