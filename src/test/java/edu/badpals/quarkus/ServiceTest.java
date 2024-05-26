@@ -41,12 +41,12 @@ public class ServiceTest {
         Assertions.assertThat(elixir.getNombre()).isEqualTo("Elixir of the Mongoose");
 		Assertions.assertThat(elixir.getQuality()).isEqualTo(7);
         Assertions.assertThat(elixir.getTipo()).isEqualTo("NormalItem");
-    }
+    } 
 
 	/**
 	 * Completa la definicion y el mapping
 	 * de la clase Usuaria a la tabla t_users
-	 *//*
+	 */
 	@Test
 	public void test_mapping_usuaria() {
 		Usuaria elfo = em.find(Usuaria.class, "Doobey");
