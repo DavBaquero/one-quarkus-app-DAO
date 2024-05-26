@@ -109,7 +109,7 @@ public class ServiceTest {
 	 * Devuelve el item con el nombre indicado, si existe.
      * Si no existe, devuelve un objeto Item con sus propiedades
      * y valores como se indica en los casos test.
-	 *//* 
+	 */
 
     @Test
 	public void test_carga_item() {
@@ -119,7 +119,7 @@ public class ServiceTest {
 		Assertions.assertThat(item.getNombre()).isEqualTo("Elixir of the Mongoose");
 		Assertions.assertThat(item.getQuality()).isEqualTo(7);
 	}
-    
+    /* 
     @Test
 	public void test_carga_item_no_existe() {
         Assertions.assertThat(servicio).isNotNull();
