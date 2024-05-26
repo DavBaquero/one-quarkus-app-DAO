@@ -1,6 +1,8 @@
 package edu.badpals.quarkus;
 
+import java.util.List;
 import java.util.Optional;
+
 
 import edu.badpals.quarkus.dominio.*;
 import edu.badpals.quarkus.repository.*;
@@ -15,6 +17,9 @@ public class ServiceOlli {
 
     @Inject
     public ItemRepository itemRepo;
+
+    @Inject
+    public OrdenRepository ordenRepo;
     
     public ServiceOlli(){}
 
@@ -35,5 +40,13 @@ public class ServiceOlli {
     public Item cargaItem(String nombre){
         Optional<Item> item = itemRepo.findByIdOptional(nombre);
         return item.isPresent() ? item.get() : new Item();
+    }
+
+    public List<Orden> cargaOrden(String nom_user){
+        return ordenRepo.findByUserName(nom_user);
+    }
+
+    public List<Orden> ordenes(){
+        return ordenRepo.listAll();
     }
 }
