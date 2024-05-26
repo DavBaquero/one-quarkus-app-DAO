@@ -18,7 +18,7 @@ public class ServiceTest {
 
     @PersistenceContext
     jakarta.persistence.EntityManager em;
-/* 
+ 
     @Inject
     ServiceOlli servicio;
 
@@ -73,7 +73,7 @@ public class ServiceTest {
     /**
 	 * Crea una clase llamada ServiceOlli e indica
 	 * que es una dependencia Quarkus 
-	 *//* 
+	 */
 
     @Test
 	public void test_inyeccion_servicio() {
