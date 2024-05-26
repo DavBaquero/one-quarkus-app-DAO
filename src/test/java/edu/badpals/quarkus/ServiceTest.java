@@ -85,7 +85,7 @@ public class ServiceTest {
 	 * Devuelve la usuaria con el nombre indicado, si existe.
 	 * Si no existe, devuelve un objeto usuaria con sus propiedades
      * y valores como se indica en los casos test.
-	 *//* 
+	 */
 	@Test
 	public void test_carga_usuaria() {
 		Assertions.assertThat(servicio).isNotNull();
@@ -94,7 +94,7 @@ public class ServiceTest {
 		Assertions.assertThat(elfo.getNombre()).isEqualTo("Doobey");
         Assertions.assertThat(elfo.getDestreza()).isEqualTo(15);
 	}
-
+/*
     @Test
 	public void test_carga_usuaria_no_existe() {
 		Assertions.assertThat(servicio).isNotNull();
