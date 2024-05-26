@@ -12,6 +12,9 @@ public class ServiceOlli {
 
     @Inject
     public UsuariaRepository usuariaRepo;
+
+    @Inject
+    public ItemRepository itemRepo;
     
     public ServiceOlli(){}
 
@@ -23,5 +26,10 @@ public class ServiceOlli {
     public Usuaria creaUsuaria(Usuaria user){
         usuariaRepo.persist(user);
         return this.cargaUsuaria(user.getNombre());
+    }
+
+    public Item cargaItem(String nombre){
+        Optional<Item> item = itemRepo.findByIdOptional(nombre);
+        return item.isPresent() ? item.get() : new Item();
     }
 }
